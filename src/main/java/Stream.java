@@ -1,11 +1,4 @@
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.DefaultHandler;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
+import javax.xml.bind.JAXBException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -13,16 +6,17 @@ import java.util.Scanner;
 
 public class Stream {
     static final String pathURL = "http://gencat.cat/llengua/cinema/provacin.xml";
-    public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
-
+    public static void main(String[] args) throws IOException, JAXBException {
         Scanner sc = new Scanner(System.in);
         URL url = new URL (pathURL);
-        List<Entitat> entitats;
+        List<Film> peliculas;
 
-        SAXParserFactory parserFactory = SAXParserFactory.newInstance();
-        SAXParser saxParser = parserFactory.newSAXParser();
-        Entitat entitat = new Entitat();
-        saxParser.parse(pathURL, entitat);
+        EntitatsHandler entitatsHandler = new EntitatsHandler();
+        peliculas = entitatsHandler.getListEntitats(url);
+        for (Film f:peliculas) {
+            System.out.println(f);
+        }
+
 //        System.out.println("DALE AL 1");
 //        int option = sc.nextInt();
 //        switch (option){
