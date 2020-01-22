@@ -62,6 +62,70 @@ public class Film {
     @XmlElement (name = "ESTRENA")
     String estrena;
 
+    public int getIdFilm() {
+        return idFilm;
+    }
+
+    public int getPrioritat() {
+        return prioritat;
+    }
+
+    public int getAny() {
+        return any;
+    }
+
+    public String getTitol() {
+        return titol;
+    }
+
+    public String getSituacio() {
+        return situacio;
+    }
+
+    public String getCartell() {
+        return cartell;
+    }
+
+    public String getOriginal() {
+        return original;
+    }
+
+    public String getDireccio() {
+        return direccio;
+    }
+
+    public String getInterprets() {
+        return interprets;
+    }
+
+    public String getSinopsi() {
+        return sinopsi;
+    }
+
+    public String getVersio() {
+        return versio;
+    }
+
+    public String getIdioma() {
+        return idioma;
+    }
+
+    public String getQualificacio() {
+        return qualificacio;
+    }
+
+    public String getTrailer() {
+        return trailer;
+    }
+
+    public String getWeb() {
+        return web;
+    }
+
+    public String getEstrena() {
+        return estrena;
+    }
+
     @Override
     public String toString() {
         return "Film{" +
