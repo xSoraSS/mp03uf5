@@ -12,6 +12,7 @@ import java.util.List;
 
 public class EntitatsHandler extends DefaultHandler {
 
+    //JAXB
     List<Film> films;
     public List<Film> getListEntitats(URL url) throws IOException, JAXBException {
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
